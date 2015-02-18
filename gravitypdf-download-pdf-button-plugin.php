@@ -2,7 +2,7 @@
 /*
 Plugin Name: Gravity PDF - Download PDF button
 Description: Adds a PDF download link at end of form submission
-Version: 1.0
+Version: 1.0.1
 Author: Adrian Gordon
 License: GPL2
 */
@@ -33,6 +33,8 @@ if (!class_exists('ITSG_GFPDF_Download_Button')) {
 				$pdf_button = "<input type='button' value='Download PDF' class='gform_next_button gform_submit_button button gpdf_button' onclick=\"window.open('".get_site_url()."/?gf_pdf=1&fid=".$form["id"]."&lid=".$lead["id"]."&template=default-template.php')\">";
 		
 				return  str_replace("[gfpdf_button]",$pdf_button,$confirmation);
+			} else {
+				return $confirmation;
 			}
 		}
 		
